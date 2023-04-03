@@ -9,35 +9,38 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
-import com.muhsanjaved.databinding_practice.R
+
+import com.muhsanjaved.databinding_practice.databinding.FragmentMainBinding
 import com.muhsanjaved.databinding_practice.models.Product
 import com.muhsanjaved.databinding_practice.viewModels.MainViewModel
 import kotlinx.android.synthetic.main.fragment_main.view.*
 import java.io.IOException
 
 class MainFragment : Fragment(){
+//    private lateinit var binding = FragmentMainBinding
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-
-        val rootView = inflater.inflate(R.layout.fragment_main, container, false)
+        val binding = FragmentMainBinding.inflate(inflater, container, false)
+//        val rootView = inflater.inflate(R.layout.fragment_main, container, false)
 
         val viewModel = ViewModelProviders.of(this)
             .get(MainViewModel::class.java)
 
-        setData(rootView, viewModel.getProduct())
+        setData(binding.root, viewModel.getProduct())
 
-        return rootView
+        binding.product = viewModel.getProduct()
+        return binding.root
 
     }
 
     private fun setData(rootView: View, product: Product) {
-        rootView.tv_name.text = product.name
+       /* rootView.tv_name.text = product.name
         rootView.tv_price.text = "${product.price}$"
         rootView.tv_description.text = product.description
         rootView.tv_num_rating.text = "(${product.totalRatings})"
 
-        Log.d("MyTag", "inflateViewAndSetData: desc: ${product.description}")
+        Log.d("MyTag", "inflateViewAndSetData: desc: ${product.description}")*/
 
         rootView.iv_product_sale.visibility = if (product.salePrice > 0.0) View.VISIBLE else View.GONE
         rootView.iv_product.setImageBitmap(getBitmapFromAssets(product.image))
