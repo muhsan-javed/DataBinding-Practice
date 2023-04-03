@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+            <variable
+                name="seondViewModel"
+                type="com.muhsanjaved.databinding_practice.viewModels.MainViewModel" />
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tv_second"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="@{String.valueOf(seondViewModel.getUser().age) , default=`Data Binding`}"
+            android:textSize="30sp" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

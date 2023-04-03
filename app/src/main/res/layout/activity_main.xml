@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="text1"
+            type="String" />
+        <variable
+            name="second_text"
+            type="String" />
+        <variable
+            name="user"
+            type="com.muhsanjaved.databinding_practice.models.User" />
+        <variable
+            name="mainViewModel"
+            type="com.muhsanjaved.databinding_practice.viewModels.MainViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+        <TextView
+            android:id="@+id/tv_first"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@{mainViewModel.getUser().name, default=`Ready to learn Hello World !`}"
+            android:textSize="30sp"
+            android:fontFamily="sans-serif-medium"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.047"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <include android:id="@+id/included_layout"
+            layout="@layout/age_row"
+            bind:seondViewModel="@{mainViewModel}"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_first"/>
+
+        <!--<TextView
+            android:id="@+id/tv_second"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="@{String.valueOf(mainViewModel.getUser().age) , default=`Data Binding`}"
+            android:textSize="30sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_first" />-->
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
