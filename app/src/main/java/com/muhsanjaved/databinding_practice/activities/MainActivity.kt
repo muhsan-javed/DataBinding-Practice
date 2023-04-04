@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.muhsanjaved.databinding_practice.R
+import com.muhsanjaved.databinding_practice.fragments.ProductDetailFragment
 import com.muhsanjaved.databinding_practice.fragments.ProductListFragment
 import com.muhsanjaved.databinding_practice.interfaces.IMainActivity
 import com.muhsanjaved.databinding_practice.models.Product
@@ -55,8 +56,8 @@ class MainActivity : AppCompatActivity() , IMainActivity{
     }
 
     override fun onProductClick(product: Product) {
-        val fragment = ProductListFragment()
 
+        val fragment = ProductDetailFragment()
         var bundle =Bundle()
         bundle.putParcelable("product_key", product)
 

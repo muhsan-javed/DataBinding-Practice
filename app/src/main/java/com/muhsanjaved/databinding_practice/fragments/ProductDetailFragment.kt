@@ -26,7 +26,7 @@ class ProductDetailFragment : Fragment(){
 
         binding.product = product!!
 
-        binding.listeners = context as IMainActivity
+        binding.listener = context as IMainActivity
 
         return binding.root
     }
