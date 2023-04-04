@@ -21,17 +21,17 @@ class MainFragment : Fragment(){
 
         binding.product = viewModel.getProduct()
 
-        binding.listener = this
+
         return binding.root
     }
 
-    //    fun runCode(v: View?) {
+  /*  //    fun runCode(v: View?) {
 //    fun runCode(v: View?, product: Product) {
     fun runCode(product: Product) : Boolean{
-
+            //        binding.listener = this
         Toast.makeText(context,"${product.name} is Clicked Run Code", Toast.LENGTH_SHORT).show()
         return true
-    }
+    }*/
 
   /*
   //        setData(binding.root, viewModel.getProduct())

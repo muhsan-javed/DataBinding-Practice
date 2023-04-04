@@ -5,11 +5,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <data>
+   <!-- <data>
         <import type="java.util.List"/>
         <import type="com.muhsanjaved.databinding_practice.models.Product"/>
 
-        <!-- <variable
+        &lt;!&ndash; <variable
             name="text1"
             type="String" />
         <variable
@@ -20,19 +20,28 @@
             type="com.muhsanjaved.databinding_practice.models.User" />
         <variable
             name="mainViewModel"
-            type="com.muhsanjaved.databinding_practice.viewModels.MainViewModel" />-->
+            type="com.muhsanjaved.databinding_practice.viewModels.MainViewModel" />&ndash;&gt;
 
         <variable
             name="dataList"
             type="List&lt;Product>" />
     </data>
-
+-->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".MainActivity">
 
-        <androidx.recyclerview.widget.RecyclerView
+        <FrameLayout
+            android:id="@+id/fragment_container"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"/>
+
+      <!--  <androidx.recyclerview.widget.RecyclerView
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:id="@+id/rv_products"
@@ -40,7 +49,8 @@
             bind:layout_constraintBottom_toBottomOf="parent"
             bind:layout_constraintTop_toTopOf="parent"
             bind:layout_constraintLeft_toLeftOf="parent"
-            bind:layout_constraintRight_toRightOf="parent"/>
+            bind:layout_constraintRight_toRightOf="parent"/>-->
+
        <!-- <FrameLayout
             android:id="@+id/main_fragment_container"
             android:layout_width="0dp"
