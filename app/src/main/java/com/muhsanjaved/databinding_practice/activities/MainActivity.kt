@@ -3,8 +3,10 @@ package com.muhsanjaved.databinding_practice.activities
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import androidx.databinding.ViewDataBinding
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.GridLayoutManager
+import com.muhsanjaved.databinding_practice.BR
 import com.muhsanjaved.databinding_practice.R
 import com.muhsanjaved.databinding_practice.adapters.ProductsAdapter
 import com.muhsanjaved.databinding_practice.databinding.ActivityMainBinding
@@ -36,13 +38,17 @@ class MainActivity : AppCompatActivity() {
 
         //setContentView(R.layout.activity_main)
 
-        val binding: ActivityMainBinding =DataBindingUtil.setContentView(this, R.layout.activity_main)
+//        val binding: ActivityMainBinding =DataBindingUtil.setContentView(this, R.layout.activity_main)
+        val binding: ViewDataBinding =DataBindingUtil.setContentView(this, R.layout.activity_main)
 //        supportFragmentManager.beginTransaction()
 //            .add(R.id.main_fragment_container, MainFragment(), "main_fragment")
 //            .commit()
 
-        binding.rvProducts.layoutManager = GridLayoutManager(this, 2)
-        binding.rvProducts.adapter = ProductsAdapter(this,DataProvider.productList.toList())
+//        binding.rvProducts.layoutManager = GridLayoutManager(this, 2)
+//        binding.rvProducts.adapter = ProductsAdapter(this,DataProvider.productList.toList())
+//        binding.dataList = DataProvider.productList.toList()
+
+        binding.setVariable(BR.dataList, DataProvider.productList.toList())
 
     }
 }

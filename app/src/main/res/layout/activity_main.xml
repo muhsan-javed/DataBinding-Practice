@@ -6,7 +6,10 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-       <!-- <variable
+        <import type="java.util.List"/>
+        <import type="com.muhsanjaved.databinding_practice.models.Product"/>
+
+        <!-- <variable
             name="text1"
             type="String" />
         <variable
@@ -18,6 +21,10 @@
         <variable
             name="mainViewModel"
             type="com.muhsanjaved.databinding_practice.viewModels.MainViewModel" />-->
+
+        <variable
+            name="dataList"
+            type="List&lt;Product>" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -29,6 +36,7 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:id="@+id/rv_products"
+            app:bindList="@{dataList}"
             bind:layout_constraintBottom_toBottomOf="parent"
             bind:layout_constraintTop_toTopOf="parent"
             bind:layout_constraintLeft_toLeftOf="parent"
