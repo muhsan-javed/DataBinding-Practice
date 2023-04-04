@@ -4,9 +4,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
 import com.muhsanjaved.databinding_practice.databinding.FragmentMainBinding
+import com.muhsanjaved.databinding_practice.models.Product
 import com.muhsanjaved.databinding_practice.viewModels.MainViewModel
 
 class MainFragment : Fragment(){
@@ -18,7 +20,17 @@ class MainFragment : Fragment(){
         val viewModel = ViewModelProviders.of(this)[MainViewModel::class.java]
 
         binding.product = viewModel.getProduct()
+
+        binding.listener = this
         return binding.root
+    }
+
+    //    fun runCode(v: View?) {
+//    fun runCode(v: View?, product: Product) {
+    fun runCode(product: Product) : Boolean{
+
+        Toast.makeText(context,"${product.name} is Clicked Run Code", Toast.LENGTH_SHORT).show()
+        return true
     }
 
   /*

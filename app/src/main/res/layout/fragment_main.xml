@@ -17,12 +17,29 @@
 
         <variable
             name="product1" type="Product" />
+        <variable
+            name="listener"
+            type="com.muhsanjaved.databinding_practice.fragments.MainFragment" />
 
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
+    <!--    android:onLongClick="@{() -> listener.runCode(product)}"
+        android:onLongClick="@{(view) -> view.isVisivle()? listener.runCode(product) : void}"
+
+        android:onClick="@{(v) -> listener.runCode(v,product)}"
+                android:onClick="@{listener::runCode}"
+-->
+        <!--<CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onCheckedChanged="@{(cb, isChecked) -> listener.runCode(product,isChecked)}"
+            android:onCheckedChanged="@{(cb, v) -> listener.runCode(product)}"
+            />-->
+
 
         <ImageView
             android:id="@+id/iv_product_sale"
