@@ -1,5 +1,6 @@
 package com.muhsanjaved.databinding_practice.models
 
+import com.muhsanjaved.databinding_practice.R
 import java.util.ArrayList
 import java.util.HashMap
 
@@ -12,7 +13,8 @@ object DataProvider {
     private fun addProduct(itemId: String, name: String, description: String, price: Double,
                            salePrice: Double, rating: Float, totalRatings: Int) {
 
-        val item = Product(itemId, name, description, price, salePrice, rating, totalRatings, "$itemId.png")
+        val item = Product(itemId, name, description, price, salePrice, rating, totalRatings, "$itemId.png",
+        R.drawable.errorimage, R.drawable.placeholderimage)
         productList.add(item)
         productMap[itemId] = item
     }

@@ -5,8 +5,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-  <!--  <data>
-        <variable
+    <data>
+       <!-- <variable
             name="text1"
             type="String" />
         <variable
@@ -17,8 +17,8 @@
             type="com.muhsanjaved.databinding_practice.models.User" />
         <variable
             name="mainViewModel"
-            type="com.muhsanjaved.databinding_practice.viewModels.MainViewModel" />
-    </data>-->
+            type="com.muhsanjaved.databinding_practice.viewModels.MainViewModel" />-->
+    </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -34,7 +34,29 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-      <!--  <TextView
+       <!-- <EditText
+            android:id="@+id/editTextTextPersonName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="45dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:hint="Enter Name Or Eamil"
+            bind:layout_constraintStart_toStartOf="parent"
+            bind:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="70dp"
+            android:layout_marginTop="179dp"
+            android:text="@{editTextTextPersonName.text}"
+            bind:layout_constraintStart_toStartOf="parent"
+            bind:layout_constraintTop_toTopOf="parent" />-->
+
+        <!--  <TextView
             android:id="@+id/tv_first"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -48,7 +70,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />-->
 
-<!--
+        <!--
 
         android:text="@{mainViewModel.getUser().name, default=`Ready to learn Hello World !`}"
         <include android:id="@+id/included_layout"

@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">DataBinding-Practice</string>
+
+    <string name="price">%s$</string>
+    <string name="total_rating">(%d)</string>
+
+    <string-array name="category">
+        <item>Sale</item>
+        <item>Muhsan</item>
+        <item>C</item>
+
+    </string-array>
 </resources>
