@@ -1,11 +1,14 @@
 package com.muhsanjaved.databinding_practice.activities
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.muhsanjaved.databinding_practice.R
 import com.muhsanjaved.databinding_practice.fragments.ProductListFragment
+import com.muhsanjaved.databinding_practice.interfaces.IMainActivity
+import com.muhsanjaved.databinding_practice.models.Product
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity() , IMainActivity{
 
 //    private lateinit var viewModel: MainViewModel
 
@@ -49,5 +52,26 @@ class MainActivity : AppCompatActivity() {
             .add(R.id.fragment_container, fragment, "product_list_fragment")
             .commit()
 
+    }
+
+    override fun onProductClick(product: Product) {
+        val fragment = ProductListFragment()
+
+        var bundle =Bundle()
+        bundle.putParcelable("product_key", product)
+
+        fragment.arguments = bundle
+
+        supportFragmentManager
+            .beginTransaction()
+            .addToBackStack("Product Detail Fragment")
+            .replace(R.id.fragment_container, fragment, "product_detail_fragment")
+            .commit()
+
+//        Toast.makeText(this,"Hi From main activity", Toast.LENGTH_SHORT).show()
+    }
+
+    override fun onProductImageClick(product: Product) {
+        Toast.makeText(this,"${product.name} is Clicked", Toast.LENGTH_SHORT).show()
     }
 }

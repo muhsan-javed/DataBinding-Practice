@@ -15,12 +15,15 @@
             name="product"
             type="com.muhsanjaved.databinding_practice.models.Product" />
 
-        <variable
-            name="product1" type="Product" />
+      <!--  <variable
+            name="product1" type="Product" />-->
+     <!--   <variable
+            name="listener"
+            type="com.muhsanjaved.databinding_practice.fragments.ProductDetailFragment" />-->
+
         <variable
             name="listener"
-            type="com.muhsanjaved.databinding_practice.fragments.MainFragment" />
-
+            type="com.muhsanjaved.databinding_practice.interfaces.IMainActivity" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -60,6 +63,7 @@
             app:imageUrl="@{`https://i.redd.it/muklx2k14v251.jpg`}"
             app:placeholderImage="@{true}"
             app:errorImage="@{false}"
+            android:onClick="@{() -> listener.onProductImageClick(product)}"
             app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"

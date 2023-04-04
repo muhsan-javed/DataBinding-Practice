@@ -7,18 +7,17 @@ import androidx.databinding.ViewDataBinding
 import androidx.databinding.library.baseAdapters.BR
 import androidx.recyclerview.widget.RecyclerView
 import com.muhsanjaved.databinding_practice.databinding.ProductItemBinding
+import com.muhsanjaved.databinding_practice.interfaces.IMainActivity
 import com.muhsanjaved.databinding_practice.models.Product
 
 class ProductsAdapter(private val context: Context, private var dataList: MutableList<Product>) :
     RecyclerView.Adapter<ProductsAdapter.BindingViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BindingViewHolder {
-//        val rootView = LayoutInflater.from(parent.context).inflate(R.layout.product_item, parent, false)
-//        val rootView = ProductItemBinding.inflate(LayoutInflater.from(context), parent, false)
-
+    /*    val rootView = LayoutInflater.from(parent.context).inflate(R.layout.product_item, parent, false)
+        val rootView = ProductItemBinding.inflate(LayoutInflater.from(context), parent, false)*/
         val rootView : ViewDataBinding =
             ProductItemBinding.inflate(LayoutInflater.from(context), parent, false)
-
         return BindingViewHolder(rootView)
     }
 
@@ -29,6 +28,7 @@ class ProductsAdapter(private val context: Context, private var dataList: Mutabl
 
 //        holder.itemBinding.productItem = product
         holder.itemBinding.setVariable(BR.productItem, product)
+        holder.itemBinding.setVariable(BR.listener, context as IMainActivity)
         holder.itemBinding.executePendingBindings()
 
       /*  holder.tvName.text = product.name

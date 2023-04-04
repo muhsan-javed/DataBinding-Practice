@@ -1,6 +1,10 @@
 package com.muhsanjaved.databinding_practice.models
 
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
 
+
+@Parcelize
 data class Product(
     val itemId: String,
     val name: String,
@@ -12,11 +16,11 @@ data class Product(
     val image: String,
     val errorImage:Int,
     val placeholer:Int
-)
+) : Parcelable
 
-{
-    val priceMap : Map<String, Double> = mapOf<String, Double>(
-        "price" to price,
-        "sale_price" to salePrice
-    )
-}
+/* : Parcelable {
+ val priceMap : Map<String, Double> = mapOf<String, Double>(
+     "price" to price,
+     "sale_price" to salePrice
+ )
+}*/

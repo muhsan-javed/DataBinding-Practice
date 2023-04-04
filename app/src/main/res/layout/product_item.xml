@@ -7,12 +7,16 @@
         <variable
             name="productItem"
             type="com.muhsanjaved.databinding_practice.models.Product" />
+        <variable
+            name="listener"
+            type="com.muhsanjaved.databinding_practice.interfaces.IMainActivity" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingBottom="16dp">
+        android:paddingBottom="16dp"
+        android:onClick="@{() -> listener.onProductClick(productItem)}">
 
         <ImageView
             android:id="@+id/iv_product_sale"

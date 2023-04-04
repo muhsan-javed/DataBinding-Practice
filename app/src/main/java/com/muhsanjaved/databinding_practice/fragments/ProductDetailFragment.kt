@@ -1,26 +1,32 @@
 package com.muhsanjaved.databinding_practice.fragments
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
-import com.muhsanjaved.databinding_practice.databinding.FragmentMainBinding
+import com.muhsanjaved.databinding_practice.databinding.FragmentProductDetailBinding
+import com.muhsanjaved.databinding_practice.interfaces.IMainActivity
 import com.muhsanjaved.databinding_practice.models.Product
 import com.muhsanjaved.databinding_practice.viewModels.MainViewModel
 
-class MainFragment : Fragment(){
+class ProductDetailFragment : Fragment(){
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View {
-        val binding = FragmentMainBinding.inflate(inflater, container, false)
+        val binding = FragmentProductDetailBinding.inflate(inflater, container, false)
 
-        val viewModel = ViewModelProviders.of(this)[MainViewModel::class.java]
+        //val viewModel = ViewModelProviders.of(this)[MainViewModel::class.java]
 
-        binding.product = viewModel.getProduct()
+        //binding.product = viewModel.getProduct()
 
+        val product = arguments?.getParcelable<Product>("product_key")
+
+        binding.product = product!!
+
+        binding.listeners = context as IMainActivity
 
         return binding.root
     }

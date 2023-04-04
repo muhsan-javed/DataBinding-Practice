@@ -2,13 +2,8 @@ package com.muhsanjaved.databinding_practice.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
-import android.widget.Toast
-import androidx.databinding.DataBindingUtil
-import androidx.databinding.adapters.ViewBindingAdapter
 import com.muhsanjaved.databinding_practice.R
-import com.muhsanjaved.databinding_practice.databinding.ActivityMainEventBinding
-import com.muhsanjaved.databinding_practice.fragments.MainFragment
+import com.muhsanjaved.databinding_practice.fragments.ProductDetailFragment
 
 class MainEventActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,7 +22,7 @@ class MainEventActivity : AppCompatActivity() {
 //        binding.listener = MyClickHandler()
 //        binding.listener = this
 
-        val fragment = MainFragment()
+        val fragment = ProductDetailFragment()
         supportFragmentManager.beginTransaction()
             .add(R.id.main_fragment_container, fragment, "main_fragment")
             .commit()
