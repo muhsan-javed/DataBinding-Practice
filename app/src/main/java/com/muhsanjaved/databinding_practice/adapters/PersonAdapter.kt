@@ -80,8 +80,6 @@ class PersonAdapter(private val userList: List<User>) :
     override fun getItemViewType(position: Int): Int {
         return userList.get(position).logType.ordinal
     }
-
-//    class BindingViewHolder(val itemView: ViewDataBinding) : RecyclerView.ViewHolder(itemView.root)
     class BindingViewHolder(val itemBinding:ViewDataBinding) : RecyclerView.ViewHolder(itemBinding.root)
 
 /*    class CallViewHolder(private val itemView:ItemCallBinding) :RecyclerView.ViewHolder(itemView.root)
